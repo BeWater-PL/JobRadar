@@ -27,6 +27,8 @@ public class QuellenProperties {
         private List<Integer> partnerIds = new ArrayList<>();
         /** Nur paginierte Quellen (Gothaer): Seitengroesse. */
         private int limit = 100;
+        /** Nur Aptiv: Basis fuer den Link zur Anzeige, der Feed liefert nur den Pfad. */
+        private String linkBasis;
         /** Fester Firmenname, falls der Feed keinen liefert. */
         private String firma;
         /**
@@ -49,6 +51,8 @@ public class QuellenProperties {
         public void setPartnerIds(List<Integer> partnerIds) { this.partnerIds = partnerIds; }
         public int getLimit() { return limit; }
         public void setLimit(int limit) { this.limit = limit; }
+        public String getLinkBasis() { return linkBasis; }
+        public void setLinkBasis(String linkBasis) { this.linkBasis = linkBasis; }
         public String getFirma() { return firma; }
         public void setFirma(String firma) { this.firma = firma; }
         public boolean isAltersfilter() { return altersfilter; }

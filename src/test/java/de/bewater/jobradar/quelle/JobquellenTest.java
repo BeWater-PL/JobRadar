@@ -1,6 +1,7 @@
 package de.bewater.jobradar.quelle;
 
 import de.bewater.jobradar.config.QuellenProperties;
+import de.bewater.jobradar.config.SuchProperties;
 import de.bewater.jobradar.domain.Stellenanzeige;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,6 +34,29 @@ class JobquellenTest {
             assertThat(in).as("Beispieldatei " + datei).isNotNull();
             return new String(in.readAllBytes(), StandardCharsets.UTF_8);
         }
+    }
+
+    private static QuellenProperties aptivKonfig() {
+        QuellenProperties props = new QuellenProperties();
+        QuellenProperties.Quelle q = new QuellenProperties.Quelle();
+        q.setFirma("Aptiv");
+        q.setLinkBasis("https://aptiv.wd5.myworkdayjobs.com/de-DE/APTIV_CAREERS");
+        props.getQuellen().put("aptiv", q);
+        return props;
+    }
+
+    private static QuellenProperties codecentricKonfig() {
+        QuellenProperties props = new QuellenProperties();
+        QuellenProperties.Quelle q = new QuellenProperties.Quelle();
+        q.setFirma("codecentric");
+        props.getQuellen().put("codecentric", q);
+        return props;
+    }
+
+    private static SuchProperties orte() {
+        SuchProperties suche = new SuchProperties();
+        suche.setErlaubteOrte(List.of("Wuppertal", "Solingen", "Remscheid"));
+        return suche;
     }
 
     @Test
@@ -190,6 +214,74 @@ class JobquellenTest {
     }
 
     @Test
+    @DisplayName("Aptiv: Workday-Seite, Link aus link-basis, relatives Datum")
+    void aptiv() throws Exception {
+        List<Stellenanzeige> liste = new AptivQuelle(aptivKonfig()).parse(beispiel("aptiv.json"));
+
+        assertThat(liste).hasSize(3);
+        Stellenanzeige a = liste.get(0);
+        assertThat(a.getFirma()).isEqualTo("Aptiv");
+        assertThat(a.getTitel()).isEqualTo("Regional Chief of Staff – EMEA (f/m/d)");
+        // locationsText taugt nicht ("2 Standorte"), gefiltert wird ueber das Standort-Facet.
+        assertThat(a.getOrt()).isEqualTo("Wuppertal");
+        assertThat(a.getRefnr()).isEqualTo("J000704207");
+        assertThat(a.getLink()).isEqualTo("https://aptiv.wd5.myworkdayjobs.com/de-DE/APTIV_CAREERS"
+                + "/job/Wuppertal-Germany/Regional-Chief-of-Staff---EMEA--f-m-d-_J000704207");
+        assertThat(a.getVeroeffentlicht()).isEqualTo(LocalDate.now());
+        assertThat(a.getEntfernungKm()).isNull();
+
+        assertThat(liste.get(1).getVeroeffentlicht()).isEqualTo(LocalDate.now().minusDays(4));
+        assertThat(liste.get(2).getVeroeffentlicht()).isEqualTo(LocalDate.now().minusDays(30));
+    }
+
+    @Test
+    @DisplayName("Aptiv: postedOn ist Text - unbekannte Formulierung bleibt leer")
+    void aptivRelativesDatum() {
+        AptivQuelle q = new AptivQuelle(aptivKonfig());
+
+        assertThat(q.relativesDatum("Heute ausgeschrieben")).isEqualTo(LocalDate.now());
+        assertThat(q.relativesDatum("Posted Today")).isEqualTo(LocalDate.now());
+        assertThat(q.relativesDatum("Vor 3 Tagen ausgeschrieben")).isEqualTo(LocalDate.now().minusDays(3));
+        assertThat(q.relativesDatum("Posted 3 Days Ago")).isEqualTo(LocalDate.now().minusDays(3));
+        assertThat(q.relativesDatum("Vor mehr als 30 Tagen ausgeschrieben")).isEqualTo(LocalDate.now().minusDays(30));
+        assertThat(q.relativesDatum("Posted 30+ Days Ago")).isEqualTo(LocalDate.now().minusDays(30));
+        assertThat(q.relativesDatum("Demnächst")).isNull();
+        assertThat(q.relativesDatum(null)).isNull();
+    }
+
+    @Test
+    @DisplayName("codecentric: Personio-XML, Ort kommt aus den erlaubten Orten")
+    void codecentric() throws Exception {
+        List<Stellenanzeige> liste =
+                new CodecentricQuelle(codecentricKonfig(), orte()).parse(beispiel("codecentric.xml"));
+
+        assertThat(liste).hasSize(3);
+        Stellenanzeige a = liste.get(0);
+        assertThat(a.getFirma()).isEqualTo("codecentric");
+        assertThat(a.getTitel()).isEqualTo("AI Software Engineer and Consultant (w/d/m)");
+        assertThat(a.getRefnr()).isEqualTo("2717132");
+        assertThat(a.getLink()).isEqualTo("https://codecentric.jobs.personio.de/job/2717132?language=de");
+        assertThat(a.getVeroeffentlicht()).isEqualTo(LocalDate.of(2026, 7, 17));
+        assertThat(a.getEntfernungKm()).isNull();
+
+        // office ist "Hybrid", Solingen steht nur unter additionalOffices.
+        assertThat(a.getOrt()).isEqualTo("Solingen");
+        // Diese Stelle hat Solingen direkt im office-Feld.
+        assertThat(liste.get(1).getOrt()).isEqualTo("Solingen");
+        // office Muenchen, Solingen unter additionalOffices - der erlaubte Ort gewinnt.
+        assertThat(liste.get(2).getOrt()).isEqualTo("Solingen");
+    }
+
+    @Test
+    @DisplayName("codecentric: ohne passenden Ort bleibt der Hybrid-Eintrag stehen")
+    void codecentricOhneErlaubtenOrt() throws Exception {
+        List<Stellenanzeige> liste =
+                new CodecentricQuelle(codecentricKonfig(), new SuchProperties()).parse(beispiel("codecentric.xml"));
+
+        assertThat(liste.get(0).getOrt()).isEqualTo("Hybrid");
+    }
+
+    @Test
     @DisplayName("Quelle ohne Eintrag in application.yml gilt als inaktiv")
     void ohneKonfigurationInaktiv() {
         assertThat(new SchmersalQuelle(LEER).aktiv()).isFalse();
@@ -211,7 +303,8 @@ class JobquellenTest {
         Pattern erlaubt = Pattern.compile("^(.*@example[.]com|support@.*|jobs@.*|application[+]job[+].*@mail[.]onlyfy[.]jobs)$");
         List<String> verdaechtig = new ArrayList<>();
         for (String datei : List.of("interamt-1714.json", "wupperverband.json", "gothaer.json", "riedel.json",
-                "knipex.json", "schmersal.json", "erfurt.json", "bilstein.json")) {
+                "knipex.json", "schmersal.json", "erfurt.json", "bilstein.json",
+                "aptiv.json", "codecentric.xml")) {
             String inhalt = beispiel(datei);
             Matcher m = mail.matcher(inhalt);
             while (m.find()) {
@@ -229,5 +322,6 @@ class JobquellenTest {
         assertThat(beispiel("wupperverband.json")).contains("Tim").contains("Testmann").contains("lena.probe@example.com");
         assertThat(beispiel("gothaer.json")).contains("Nina Platzhalter").contains("paula.attrappe@example.com");
         assertThat(beispiel("schmersal.json")).contains("Jonas Fiktiv").contains("mia.dummy@example.com");
+        assertThat(beispiel("codecentric.xml")).contains("Maria Beispiel").contains("erika.muster@example.com");
     }
 }

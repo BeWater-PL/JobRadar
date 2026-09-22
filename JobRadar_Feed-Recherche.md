@@ -29,3 +29,22 @@
 1. JSON direkt: Barmenia Gothaer, Riedel, Knipex, Schmersal, Wupperverband, bilstein group, Erfurt (POST), Interamt (partner 1714/2732/1409)
 2. Sitemap-XML: Vorwerk, Coroplast, Vaillant (nur URL+Slug, Titel aus Slug ableiten)
 3. HTML-Scraping: WSW (softgarden), GEDORE (umantis), gkvi, Stadt Wuppertal, Akzenta
+
+## Geprueft 09/2026, nicht angebunden
+
+Zweite Runde, wieder per curl. Neu angebunden wurden daraus nur Aptiv
+(Workday) und codecentric (Personio-XML) — der Rest liefert nichts
+Maschinenlesbares oder ist ausdruecklich gesperrt:
+
+- **Vorwerk, Bayer Wuppertal, Vaillant Remscheid** — SAP SuccessFactors. Die
+  `robots.txt` sperrt `/services/` und damit den RSS-Ausgang. Bewusst nicht
+  abgefragt.
+- **BARMER** — BeeSite (milch & zucker), nur HTML und Sitemap, kein Feed.
+- **WSW** — softgarden ohne JSON-Feed auf eigener Domain, derzeit ausserdem
+  keine IT-Stellen.
+- **Bergische Universitaet** — QIS-Server, nur HTML.
+- **Riedel** — von `riedel.net/jobs.json` (404 seit 09/2026) auf ein
+  softgarden-Board ohne Feed umgezogen. Quelle steht auf `aktiv: false`.
+
+Diese Arbeitgeber kommen weiter ueber die Arbeitsagentur und die
+Job-Alert-Mails herein.

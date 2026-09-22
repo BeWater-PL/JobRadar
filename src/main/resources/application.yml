@@ -69,7 +69,9 @@ jobradar:
       url: https://api.smartrecruiters.com/v1/companies/BarmeniaGothaerAG/postings
       limit: 100
     riedel:
-      aktiv: true
+      # Feed abgeschaltet: riedel.net/jobs.json liefert seit 09/2026 404,
+      # Riedel laeuft jetzt ueber ein softgarden-Board ohne JSON-Feed.
+      aktiv: false
       # jobStartDate ist ein Anlagedatum.
       altersfilter: false
       url: https://www.riedel.net/jobs.json
@@ -102,6 +104,22 @@ jobradar:
       # Ohne diesen Header liefert der Proxy eine HTML-Debugseite statt JSON.
       header:
         Accept: application/json
+    aptiv:
+      aktiv: true
+      # postedOn ist nur relativer Text ("vor 30+ Tagen") - kein verlaessliches Datum.
+      altersfilter: false
+      # Workday CXS-API, POST mit JSON-Body, max. 20 je Seite. Standort-Filter
+      # wird bei jedem Lauf aus den Facets gelesen (IDs koennen sich aendern).
+      url: https://aptiv.wd5.myworkdayjobs.com/wday/cxs/aptiv/APTIV_CAREERS/jobs
+      link-basis: https://aptiv.wd5.myworkdayjobs.com/de-DE/APTIV_CAREERS
+      firma: Aptiv
+    codecentric:
+      aktiv: true
+      # createdAt ist das Anlagedatum, Stellen laufen lange.
+      altersfilter: false
+      # Personio-XML-Feed. Standort Solingen, dazu Remote.
+      url: https://codecentric.jobs.personio.de/xml?language=de
+      firma: codecentric
     mail:
       # Job-Alert-Mails von Indeed, StepStone, kimeta und meinestadt per IMAP.
       # Zugangsdaten NICHT hier eintragen, sondern als Umgebungsvariablen:
@@ -140,6 +158,46 @@ jobradar:
       arbeitszeit: vz
     - name: Softwareentwickler Remote deutschlandweit
       was: Softwareentwickler
+      wo: ""
+      umkreis: 200
+      arbeitszeit: ho
+    - name: Informatiker Wuppertal
+      was: Informatiker
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Programmierer Wuppertal
+      was: Programmierer
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Webentwickler Wuppertal
+      was: Webentwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Backend Entwickler Wuppertal
+      was: Backend Entwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Frontend Entwickler Wuppertal
+      was: Frontend Entwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Fullstack Entwickler Wuppertal
+      was: Fullstack Entwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Developer Wuppertal
+      was: Developer
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Java Entwickler Remote deutschlandweit
+      was: Java Entwickler
       wo: ""
       umkreis: 200
       arbeitszeit: ho

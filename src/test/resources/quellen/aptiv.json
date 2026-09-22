@@ -1,0 +1,51 @@
+{
+ "total": 22,
+ "jobPostings": [
+  {
+   "title": "Regional Chief of Staff – EMEA (f/m/d)",
+   "externalPath": "/job/Wuppertal-Germany/Regional-Chief-of-Staff---EMEA--f-m-d-_J000704207",
+   "locationsText": "Wuppertal, Germany",
+   "postedOn": "Heute ausgeschrieben",
+   "bulletFields": [
+    "J000704207"
+   ]
+  },
+  {
+   "title": "Senior Edge AI & Robotics Engineer (f-m-d)",
+   "externalPath": "/job/Wuppertal-Germany/Senior-Edge-AI---Robotics-Engineer_J000702687",
+   "locationsText": "Wuppertal, Germany",
+   "postedOn": "Vor 4 Tagen ausgeschrieben",
+   "bulletFields": [
+    "J000702687"
+   ]
+  },
+  {
+   "title": "Working Student - Grant Funds Projects Assistant",
+   "externalPath": "/job/Wuppertal-Germany/Working-Student---Grant-Funds-Projects-Assistant_J000702111",
+   "locationsText": "Wuppertal, Germany",
+   "postedOn": "Vor mehr als 30 Tagen ausgeschrieben",
+   "bulletFields": [
+    "J000702111"
+   ]
+  }
+ ],
+ "facets": [
+  {
+   "facetParameter": "Location",
+   "descriptor": "Location",
+   "values": [
+    {
+     "descriptor": "Wuppertal, Germany",
+     "id": "6a710a7712db01abef2f41dcd703e5fc",
+     "count": 18
+    },
+    {
+     "descriptor": "DEU Wuppertal Plant – MFG",
+     "id": "f5a6894d103f1000d0ba66b08d740000",
+     "count": 4
+    }
+   ]
+  }
+ ],
+ "userAuthenticated": false
+}

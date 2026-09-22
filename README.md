@@ -30,8 +30,8 @@ täglich dieselben zwanzig Anzeigen durchzusehen Lebenszeit kostet.
 ## Was es tut
 
 - fragt zweimal täglich die Jobsuche-Schnittstelle der Bundesagentur ab
-  (mehrere Suchprofile: Wuppertal plus 15 km Umkreis, dazu Remote
-  deutschlandweit)
+  (13 Suchprofile: Wuppertal plus 15 km Umkreis, dazu zwei Remote-Profile
+  deutschlandweit) und neun Karriere-Feeds einzelner Arbeitgeber
 - wirft alles raus, was nach Senior, Ausbildung, Werkstudent oder Teamleitung
   klingt — und alles, was kein Entwickler-Wort im Titel hat (Arbeitgeber-Feeds
   bringen sonst Schlosser und Vertrieb mit)
@@ -53,7 +53,7 @@ Java-Laufzeit — auf dem Zielrechner muss nichts installiert sein.
 de.bewater.jobradar
 ├── config      Suchprofile und Filterlisten aus application.yml
 ├── domain      Stellenanzeige mit Fingerabdruck-Logik, Status
-├── quelle      Jobquellen: Arbeitsagentur, acht Arbeitgeber-Feeds, Job-Alert-Postfach
+├── quelle      Jobquellen: Arbeitsagentur, neun Arbeitgeber-Feeds, Job-Alert-Postfach
 ├── filter      Bewertung: passt das für einen Berufseinsteiger?
 ├── service     Suchlauf, Zeitplan, Dublettenabgleich
 ├── repo        Spring-Data-Zugriff auf SQLite
@@ -144,11 +144,13 @@ steht dann als „Quellen: 8 ok, 1 fehlgeschlagen“ in der Oberfläche.
 | Interamt | Stellenportal des öffentlichen Dienstes, je Partner-ID (Stadt Wuppertal 1714, Gebäudemanagement 2732, Jobcenter 1409) | JSON |
 | Wupperverband | karriere.wupperverband.de (d.vinci) | JSON |
 | Barmenia Gothaer | SmartRecruiters-API, nur Standorte in Deutschland | JSON, paginiert |
-| Riedel Communications | riedel.net/jobs.json (softgarden) | JSON |
+| ~~Riedel Communications~~ | abgeschaltet — seit 09/2026 kein JSON-Feed mehr (Umzug auf ein softgarden-Board ohne Feed) | — |
 | Knipex | karriere.knipex.de/jobs.feed.json (softgarden) | JSON, schema.org |
 | Schmersal | onlyfy-Jobliste | JSON |
 | Erfurt & Sohn | Talention-API (POST) | JSON |
 | bilstein group | Guidecom-Proxy, braucht `Accept: application/json` | JSON |
+| Aptiv | Workday-CXS-API, POST; Standort-Facet Wuppertal wird je Lauf neu gelesen | JSON, paginiert |
+| codecentric | Personio-XML-Feed, Standort Solingen | XML |
 | Job-Alert | eigenes IMAP-Postfach: Alert-Mails von Indeed, StepStone, kimeta, meinestadt | E-Mail (HTML) |
 
 Endpunkte, Header und Partner-IDs stehen unter `jobradar.quellen` in
