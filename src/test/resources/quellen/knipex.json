@@ -1,0 +1,143 @@
+{
+ "meta": {
+  "llms": "https://karriere.knipex.de/llms.txt",
+  "source": "https://karriere.knipex.de/",
+  "schema": "https://schema.org/JobPosting"
+ },
+ "@context": "https://schema.org",
+ "@type": "DataFeed",
+ "name": "Active job ads",
+ "dateModified": "2026-09-15T18:09:05.846Z",
+ "numberOfItems": 27,
+ "dataFeedElement": [
+  {
+   "@type": "DataFeedItem",
+   "dateModified": "2026-09-15T05:26:30.000Z",
+   "item": {
+    "@type": "JobPosting",
+    "title": "Initiativbewerbung Studierende und Abschlussarbeiten (all genders)",
+    "url": "https://karriere.knipex.de/jobs/46336169/Initiativbewerbung-Studierende-und-Abschlussarbeiten-all-genders-/",
+    "datePosted": "2026-09-09T16:04:47.564+02:00",
+    "identifier": {
+     "name": "KNIPEX-Werk C. Gustav Putsch KG",
+     "@type": "PropertyValue",
+     "value": 46336169
+    },
+    "description": "<h3><strong>Wir sind KNIPEX der führende Hersteller von Zangen für professionelle Anwender und </strong><strong>Anwenderinnen</strong><strong> in aller Welt.</strong></h3>\n<p>Mit ca. 1.800 Beschäftigten in Wuppertal entwickeln und fertigen wir Lösungen für effektives, leichtes und sicheres Arbeiten. Wir sind seit über 140 Jahren ein unabhängiges Familienunternehmen. Hohe Qualität und Leistungsfähigkeit, ständige Verbesserung und die Orientierung an menschlichen Werten sind Grundlagen unseres Handelns.</p>\n\n<h3><strong>Das erwartet dich</strong></h3>\n<ul style=\"box-sizing: border-box; margin: 15px 0px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; list-style: disc; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\">Von einer aktiven Mitarbeit als Werkstudent (m/w/d), über Praktika zum Kennenlernen unserer Fachbereiche bis hin zur Abschlussarbeit im Unternehmen bieten wir jedes Jahr eine Vielzahl von Möglichkeiten zur Förderung und Bindung von Studierenden.</p>\n</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\">Wir ermöglichen dir sowohl im kaufmännischen als auch im gewerblich-technischen Bereich interessante Einblicke in unser Familienunternehmen:</p>\n<p style=\"box-sizing: border-box; margin: 20px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\"><em style=\"box-sizing: border-box;\"><strong style=\"box-sizing: border-box; font-weight: bold;\">Controlling, Finanzbuchhaltung, Personal, Marketing, Produktmanagement, Einkauf, Internationaler und nationaler Vertrieb, Arbeitsorganisation, Produktion, Logistik, Qualitätsmanagement, Technische Planung, Werksplanung und -technik, Maschinenbau, Produktentwicklung und Nachhaltigkeit</strong></em></p>\n</li>\n</ul>\n\n<h3><strong>Das wünschen wir uns</strong></h3>\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Senden uns bitte deine vollständigen Bewerbungsunterlagen zu</p>\n<ul style=\"box-sizing: border-box; margin: 15px 0px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; list-style: disc; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\">Lebenslauf,</p>\n</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\">Anschreiben, inkl. der zeitlichen Verfügbarkeit und gerne mit Informationen über deine Motivation zur Mitarbeit bei KNIPEX</p>\n</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\">Aktueller Notenspiegel</p>\n</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400;\">Arbeits- oder Praktikumszeugnisse, ggf. vorhandene Ausbildungszeugnisse</p>\n</li>\n</ul>\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Bitte beschreibe uns kurz deine Vorkenntnisse, wenn kein Arbeitszeugnis oder Praktikumsnachweis vorliegt.</p>\n<p style=\"box-sizing: border-box; margin: 20px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Gib bitte zusätzlich an, für welche Fachbereiche du dich besonders interessierst.</p>\n\n<h3><strong>Bist du interessiert?</strong></h3>\n<p>Dann bewirb dich bitte <strong>digital</strong>. Der Umwelt zuliebe und zur Verkürzung der Bearbeitungszeiten haben wir unseren Auswahlprozess vollständig digitalisiert.&nbsp;Daher bitten wir dich,&nbsp;<strong>deine</strong><strong><span style=\"font-weight: normal;\"> </span>Bewerbungsunterlagen</strong>&nbsp;<strong>direkt über unser Online-Portal&nbsp;</strong>hochzuladen. Bewerbungen auf anderen Wegen können im Bewerbungsprozess leider nicht länger berücksichtigt werden.&nbsp;</p>\n<p>Wir legen Wert auf Vielfalt und begrüßen daher alle Bewerbungen - unabhängig von Geschlecht, Alter, Nationalität, ethnischer und sozialer Herkunft, Religion, Behinderung, sexueller Orientierung oder Hautfarbe.</p>\n<p>Wir freuen uns auf deine Bewerbungsunterlagen, inklusive <strong>aktuellem Notenspiegel </strong>und mit Angabe deines möglichen&nbsp;<strong>Einsatzzeitraums.</strong></p>\n\n",
+    "employmentType": "PART_TIME",
+    "hiringOrganization": {
+     "@id": "https://karriere.knipex.de",
+     "url": "https://karriere.knipex.de",
+     "logo": "https://pcw-cdn.softgarden.de/uploads/karriereknipex/de/widget/header/design/image_x5y1ss32lw93yak6?timestamp=1715855315191",
+     "name": "KNIPEX-Werk C. Gustav Putsch KG",
+     "@type": "Organization",
+     "sameAs": "https://karriere.knipex.de",
+     "industry": "Metal Industry and Processing",
+     "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 133,
+      "ratingValue": 4.8,
+      "worstRating": 1
+     }
+    },
+    "jobLocation": {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "postalCode": "42349",
+      "addressRegion": "Nordrhein-Westfalen",
+      "streetAddress": "Oberkamper Straße 13",
+      "addressCountry": "Deutschland",
+      "addressLocality": "Wuppertal"
+     }
+    }
+   }
+  },
+  {
+   "@type": "DataFeedItem",
+   "dateModified": "2026-09-15T05:26:31.000Z",
+   "item": {
+    "@type": "JobPosting",
+    "title": "Freiwilliges Praktikum (all genders)",
+    "url": "https://karriere.knipex.de/jobs/46336819/Freiwilliges-Praktikum-all-genders-/",
+    "datePosted": "2026-09-09T16:04:45.367+02:00",
+    "identifier": {
+     "name": "KNIPEX-Werk C. Gustav Putsch KG",
+     "@type": "PropertyValue",
+     "value": 46336819
+    },
+    "description": "<h3><strong>Wir sind KNIPEX, der führende Hersteller von Zangen für professionelle Anwender und </strong><strong>Anwenderinnen</strong><strong> in aller Welt.</strong></h3>\n<p>Mit ca. 1.800 Beschäftigten in Wuppertal entwickeln und fertigen wir Lösungen für effektives, leichtes und sicheres Arbeiten. Wir sind seit über 140 Jahren ein unabhängiges Familienunternehmen. Hohe Qualität und Leistungsfähigkeit, ständige Verbesserung und die Orientierung an menschlichen Werten sind Grundlagen unseres Handelns.</p>\n\n<h3>Das erwartet dich</h3>\n<p>Im Rahmen eines freiwilligen Praktikums hast du die Möglichkeit, einen Einblick in unser Unternehmen zu erhalten. Gib uns gerne bereits in der Bewerbung an, welcher Bereich oder Beruf dich besonders interessiert.</p>\n<p><strong>Diese Tätigkeiten sind in kaufmännischen und gewerblich-technischen Fachbereichen möglich. </strong><strong>Unsere Bereiche sind u.a.:</strong></p>\n<p>Produktion, IT &amp; Digitalisierung, Marketing, Vertrieb, Personal, Einkauf, Finanzbuchhaltung, Controlling, Entwicklung &amp; Technologie, Konstruktion, Werksplanung, Qualitätsmanagement und Logistik.&nbsp;</p>\n\n<h3><strong>Das wünschen wir uns</strong></h3>\n<div class=\"entry\">\n<div class=\"content-body\">\n<p>Bitte sende uns die folgenden Unterlagen zu:</p>\n<ul>\n<li>Lebenslauf</li>\n<li>Vorhandene Zeugnisse</li>\n<li>Kurzes Anschreiben mit Informationen über die Rahmenbedingungen (Bereichswunsch, Zeitraum, etc.)</li>\n</ul>\n</div>\n</div>\n\n<p class=\"MsoNormal\" style=\"margin-bottom: 7.5pt; line-height: 16.2pt; background: white;\"><strong><span style=\"font-size: 9.0pt; mso-fareast-mso-bidi-mso-bidi-theme-font: minor-latin; color: #333333; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: DE;\">Du bist interessiert?</span></strong></p>\n<p class=\"MsoNormal\" style=\"margin-bottom: 7.5pt; line-height: 16.2pt; background: white;\"><span style=\"font-size: 9.0pt; mso-fareast-mso-bidi-mso-bidi-theme-font: minor-latin; color: #333333; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: DE;\">Dann bewirb dich bitte <strong>digital</strong>. Der Umwelt zuliebe und zur Verkürzung der Bearbeitungszeiten haben wir unseren Auswahlprozess vollständig digitalisiert. </span></p>\n<p class=\"MsoNormal\" style=\"margin-bottom: 7.5pt; line-height: 16.2pt; background: white;\"><span style=\"font-size: 9.0pt; mso-fareast-mso-bidi-mso-bidi-theme-font: minor-latin; color: #333333; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: DE;\">Daher bitten wir dich, <strong>deine Bewerbungsunterlagen</strong>&nbsp;<strong>direkt über unser Online-Portal&nbsp;</strong>hochzuladen. Bewerbungen auf anderen Wegen können im Bewerbungsprozess leider nicht länger berücksichtigt werden. </span></p>\n<p class=\"MsoNormal\" style=\"margin-bottom: 7.5pt; line-height: 16.2pt; background: white;\"><span style=\"font-size: 9.0pt; mso-fareast-mso-bidi-mso-bidi-theme-font: minor-latin; color: #333333; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: DE;\">Wir legen Wert auf Vielfalt und begrüßen daher alle Bewerbungen - unabhängig von Geschlecht, Alter, Nationalität, ethnischer und sozialer Herkunft, Religion, Behinderung, sexueller Orientierung oder Hautfarbe.</span></p>\n<p class=\"MsoNormal\" style=\"margin-bottom: 7.5pt; line-height: 16.2pt; background: white;\"><span style=\"font-size: 9.0pt; mso-fareast-mso-bidi-mso-bidi-theme-font: minor-latin; color: #333333; mso-font-kerning: 0pt; mso-ligatures: none; mso-fareast-language: DE;\"><strong>Wir freuen uns auf deine Bewerbung.</strong><br></span></p>\n\n",
+    "employmentType": "INTERN",
+    "hiringOrganization": {
+     "@id": "https://karriere.knipex.de",
+     "url": "https://karriere.knipex.de",
+     "logo": "https://pcw-cdn.softgarden.de/uploads/karriereknipex/de/widget/header/design/image_x5y1ss32lw93yak6?timestamp=1715855315191",
+     "name": "KNIPEX-Werk C. Gustav Putsch KG",
+     "@type": "Organization",
+     "sameAs": "https://karriere.knipex.de",
+     "industry": "Metal Industry and Processing",
+     "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 133,
+      "ratingValue": 4.8,
+      "worstRating": 1
+     }
+    },
+    "jobLocation": {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "postalCode": "42349",
+      "addressRegion": "Nordrhein-Westfalen",
+      "streetAddress": "Oberkamper Straße 13",
+      "addressCountry": "Deutschland",
+      "addressLocality": "Wuppertal"
+     }
+    }
+   }
+  },
+  {
+   "@type": "DataFeedItem",
+   "dateModified": "2026-09-15T13:39:51.000Z",
+   "item": {
+    "@type": "JobPosting",
+    "title": "Initiativbewerbung (all genders)",
+    "url": "https://karriere.knipex.de/jobs/45836645/Initiativbewerbung-all-genders-/",
+    "datePosted": "2026-09-09T16:04:48.039+02:00",
+    "identifier": {
+     "name": "KNIPEX-Werk C. Gustav Putsch KG",
+     "@type": "PropertyValue",
+     "value": 45836645
+    },
+    "description": "<h3><strong>Wir sind KNIPEX der führende Hersteller von Zangen für professionelle Anwender und </strong><strong>Anwenderinnen</strong><strong> in aller Welt.</strong></h3>\n<p>Mit ca. 1.800 Beschäftigten in Wuppertal entwickeln und fertigen wir Lösungen für effektives, leichtes und sicheres Arbeiten. Wir sind seit über 140 Jahren ein unabhängiges Familienunternehmen. Hohe Qualität und Leistungsfähigkeit, ständige Verbesserung und die Orientierung an menschlichen Werten sind Grundlagen unseres Handelns.</p>\n\n<h3><strong>Das erwartet Sie</strong></h3>\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Wir bieten Einstiegsmöglichkeiten u.a. in den folgenden Fachbereichen:</p>\n<p style=\"box-sizing: border-box; margin: 20px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><em style=\"box-sizing: border-box;\"><strong style=\"box-sizing: border-box; font-weight: bold;\">Controlling, Finanzbuchhaltung, Personal, Marketing, Produktmanagement, Einkauf, Internationaler und nationaler Vertrieb, Arbeitsorganisation, Produktion, Logistik, Qualitätsmanagement, Technologie &amp; Entwicklung, Werksplanung und -technik, Maschinenbau und Produktentwicklung und Nachhaltigkeit</strong></em></p>\n\n<h3><strong>Das wünschen wir uns</strong></h3>\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Senden Sie uns bitte Ihre vollständigen Bewerbungsunterlagen zu:</p>\n<ul style=\"box-sizing: border-box; margin: 15px 0px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; list-style: disc; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">Lebenslauf</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">ggf. vorhandene Arbeitszeugnisse\n<ul style=\"box-sizing: border-box; margin: 15px 0px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; list-style: disc; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">\n<li>Bitte beschreiben Sie Ihre Vorkenntnisse und Verantwortungsbereiche, sollte Ihnen kein Arbeitszeugnis vorliegen.</li>\n</ul>\n</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">ggf. vorhandene Ausbildungszeugnisse</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">Anschreiben mit Informationen über Ihre Wechselmotivation\n<ul style=\"box-sizing: border-box; margin: 15px 0px; line-height: 21.6px; color: rgb(51, 51, 51); text-rendering: geometricprecision; -webkit-font-smoothing: antialiased; font-weight: 400; list-style: disc; font-size: 18px; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">Geben Sie im Anschreiben bitte an, für welche/n Fachbereich/e Sie sich besonders interessieren.</li>\n<li style=\"box-sizing: border-box; margin-bottom: 10px;\">Nennen Sie uns bitte auch Ihren möglichen Eintrittstermin sowie Ihre Gehaltsvorstellung</li>\n</ul>\n</li>\n</ul>\n\n<h3><strong>Sie sind interessiert an einer Mitarbeit bei KNIPEX?</strong></h3>\n<p>Dann bewerben Sie sich bitte&nbsp;<strong>digital</strong>. Der Umwelt zuliebe und zur Verkürzung der Bearbeitungszeiten haben wir unseren Auswahlprozess vollständig digitalisiert.&nbsp;</p>\n<p>Daher bitten wir Sie, <strong>Ihre Bewerbungsunterlagen</strong>&nbsp;<strong>direkt über unser Online-Portal&nbsp;</strong>hochzuladen. Bewerbungen auf anderen Wegen können im Bewerbungsprozess leider nicht länger berücksichtigt werden.&nbsp;</p>\n<p>Wir legen Wert auf Vielfalt und begrüßen daher alle Bewerbungen - unabhängig von Geschlecht, Alter, Nationalität, ethnischer und sozialer Herkunft, Religion, Behinderung, sexueller Orientierung oder Hautfarbe.</p>\n<p>Wir freuen uns auf Ihre Bewerbung.</p>\n\n",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+     "@id": "https://karriere.knipex.de",
+     "url": "https://karriere.knipex.de",
+     "logo": "https://pcw-cdn.softgarden.de/uploads/karriereknipex/de/widget/header/design/image_x5y1ss32lw93yak6?timestamp=1715855315191",
+     "name": "KNIPEX-Werk C. Gustav Putsch KG",
+     "@type": "Organization",
+     "sameAs": "https://karriere.knipex.de",
+     "industry": "Metal Industry and Processing",
+     "aggregateRating": {
+      "bestRating": 5,
+      "ratingCount": 133,
+      "ratingValue": 4.8,
+      "worstRating": 1
+     }
+    },
+    "jobLocation": {
+     "@type": "Place",
+     "address": {
+      "@type": "PostalAddress",
+      "postalCode": "42349",
+      "addressRegion": "Nordrhein-Westfalen",
+      "streetAddress": "Oberkamper Straße 13",
+      "addressCountry": "Deutschland",
+      "addressLocality": "Wuppertal"
+     }
+    }
+   }
+  }
+ ]
+}

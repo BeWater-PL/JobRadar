@@ -1,0 +1,377 @@
+{
+ "offset": 0,
+ "limit": 100,
+ "totalFound": 385,
+ "content": [
+  {
+   "id": "744000149605025",
+   "name": "Großschadenregulierer*in im Außendienst - Sachschaden",
+   "uuid": "06de88d3-1f63-4b9d-b713-aada613873da",
+   "jobAdId": "0dd115c0-9611-452b-beea-285abe0624ba",
+   "defaultJobAd": true,
+   "refNumber": "REF1015Y",
+   "company": {
+    "identifier": "BarmeniaGothaerAG",
+    "name": "BarmeniaGothaer AG"
+   },
+   "releasedDate": "2026-09-15T13:34:29.868Z",
+   "location": {
+    "city": "Stuttgart",
+    "region": "BW",
+    "country": "de",
+    "address": "Johannesstraße",
+    "postalCode": "70176",
+    "remote": false,
+    "hybrid": true,
+    "latitude": "48.7783008",
+    "longitude": "9.1609734",
+    "fullLocation": "Stuttgart, BW, Germany"
+   },
+   "industry": {
+    "id": "insurance",
+    "label": "Insurance"
+   },
+   "department": {
+    "id": "13864391",
+    "label": "Konzern"
+   },
+   "function": {
+    "id": "other",
+    "label": "Other"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "associate",
+    "label": "Associate"
+   },
+   "customField": [
+    {
+     "fieldId": "6937e57e72b8a95188237128",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "BarmeniaGothaer AG"
+    },
+    {
+     "fieldId": "6937e57e72b8a95188237129",
+     "fieldLabel": "Department",
+     "valueId": "13864391",
+     "valueLabel": "Konzern"
+    },
+    {
+     "fieldId": "69493391a669e3aa57529089",
+     "fieldLabel": "Whatchado Jobstories",
+     "valueId": "9efb2329-164f-441c-8627-b961b0b87213",
+     "valueLabel": "vincent-eisheuer (GSC-Schadenregulierer Haftpflicht)"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "de",
+     "valueLabel": "Germany"
+    },
+    {
+     "fieldId": "694933c6e481d964c7e3c4ed",
+     "fieldLabel": "Kontaktperson",
+     "valueId": "aae32dc5-7916-4bb5-8c9d-038848670780",
+     "valueLabel": "Nina Platzhalter"
+    },
+    {
+     "fieldId": "6949342f31e8d125befb5e6d",
+     "fieldLabel": "Telefonnummer",
+     "valueId": "2584698e-84df-4d57-ac08-695f0a30d5f2",
+     "valueLabel": "0221 0000000"
+    },
+    {
+     "fieldId": "699c45d966ad8f24b9093cd5",
+     "fieldLabel": "Reward",
+     "valueId": "ebc08b8d-03ef-49e1-bd71-a4ae1f816ba3",
+     "valueLabel": "2000 EUR"
+    },
+    {
+     "fieldId": "6949301026ac43e0f9d7d050",
+     "fieldLabel": "Branding",
+     "valueId": "e7602bb5-280a-49b4-85bf-809d8018c4c3",
+     "valueLabel": "Schadenregulierung"
+    },
+    {
+     "fieldId": "69492f6180c48b77ccfe1e32",
+     "fieldLabel": "Fachgebiet",
+     "valueId": "3a129139-b821-4616-9f61-56e61a5aa70f",
+     "valueLabel": "Schadenmanagement"
+    },
+    {
+     "fieldId": "694914a4a669e3aa57529088",
+     "fieldLabel": "Dein Einstieg",
+     "valueId": "8ecb7e7b-4e05-4167-8889-7c7e196ae8fa",
+     "valueLabel": "(Young/Senior) Professionals"
+    },
+    {
+     "fieldId": "6949340297db27c422322d30",
+     "fieldLabel": "Emailadresse",
+     "valueId": "ecea0dd8-92fc-4e58-b7ea-2c276fe62c23",
+     "valueLabel": "nina.platzhalter@example.com"
+    },
+    {
+     "fieldId": "6949146d26ac43e0f9d7d04e",
+     "fieldLabel": "Startdatum ",
+     "valueLabel": "ab sofort"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BarmeniaGothaerAG/postings/744000149605025",
+   "language": {
+    "code": "de",
+    "label": "German",
+    "labelNative": "Deutsch"
+   }
+  },
+  {
+   "id": "744000149602869",
+   "name": "Spezialist KI-gestütztes Inputmanagement & Prozessoptimierung",
+   "uuid": "fc2fbbec-7462-4d32-b9fb-279fcd18f20d",
+   "jobAdId": "4156ebe6-3aa0-4566-aa14-4b97e48f6c3f",
+   "defaultJobAd": true,
+   "refNumber": "REF1125I",
+   "company": {
+    "identifier": "BarmeniaGothaerAG",
+    "name": "BarmeniaGothaer AG"
+   },
+   "releasedDate": "2026-09-15T13:23:27.910Z",
+   "location": {
+    "city": "Köln",
+    "country": "de",
+    "address": "Arnoldiplatz 1",
+    "postalCode": "42119",
+    "remote": false,
+    "hybrid": false,
+    "fullLocation": "Köln, , Germany"
+   },
+   "industry": {
+    "id": "insurance",
+    "label": "Insurance"
+   },
+   "department": {
+    "id": "13864391",
+    "label": "Konzern"
+   },
+   "function": {
+    "id": "information_technology",
+    "label": "Information Technology"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "associate",
+    "label": "Associate"
+   },
+   "customField": [
+    {
+     "fieldId": "6937e57e72b8a95188237128",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "BarmeniaGothaer AG"
+    },
+    {
+     "fieldId": "6937e57e72b8a95188237129",
+     "fieldLabel": "Department",
+     "valueId": "13864391",
+     "valueLabel": "Konzern"
+    },
+    {
+     "fieldId": "69493391a669e3aa57529089",
+     "fieldLabel": "Whatchado Jobstories",
+     "valueId": "210aed4d-8893-48be-8d9e-bf1dba9104f7",
+     "valueLabel": "barmeniagothaer-company-teaser1"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "de",
+     "valueLabel": "Germany"
+    },
+    {
+     "fieldId": "694933c6e481d964c7e3c4ed",
+     "fieldLabel": "Kontaktperson",
+     "valueId": "4badc616-04cb-4d67-93bf-6a5e7c3fa16c",
+     "valueLabel": "Paula Attrappe"
+    },
+    {
+     "fieldId": "6949342f31e8d125befb5e6d",
+     "fieldLabel": "Telefonnummer",
+     "valueId": "8839a4bf-b6e8-4e58-8f57-3a15f34b4bb5",
+     "valueLabel": "0202 0000000"
+    },
+    {
+     "fieldId": "69492bc9e481d964c7e3c4ec",
+     "fieldLabel": "Standort 2",
+     "valueId": "5ae29de2-819a-449c-a898-8ec04f5a04f7",
+     "valueLabel": "Barmenia-Allee 1, 42119 Wuppertal"
+    },
+    {
+     "fieldId": "6949301026ac43e0f9d7d050",
+     "fieldLabel": "Branding",
+     "valueId": "02caa6b6-44f0-4cd3-baf9-ecf0b705fc37",
+     "valueLabel": "Senior Professionals"
+    },
+    {
+     "fieldId": "69492f6180c48b77ccfe1e32",
+     "fieldLabel": "Fachgebiet",
+     "valueId": "cf4ee5fd-3cc7-4c7b-880c-0208dfadb705",
+     "valueLabel": "KI, Digitalisierung und Datenmanagement"
+    },
+    {
+     "fieldId": "694914a4a669e3aa57529088",
+     "fieldLabel": "Dein Einstieg",
+     "valueId": "8ecb7e7b-4e05-4167-8889-7c7e196ae8fa",
+     "valueLabel": "(Young/Senior) Professionals"
+    },
+    {
+     "fieldId": "6949340297db27c422322d30",
+     "fieldLabel": "Emailadresse",
+     "valueId": "e63cf2d4-407c-4ee9-97cb-b070ae2f43c2",
+     "valueLabel": "paula.attrappe@example.com"
+    },
+    {
+     "fieldId": "6949146d26ac43e0f9d7d04e",
+     "fieldLabel": "Startdatum ",
+     "valueLabel": "ab sofort"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BarmeniaGothaerAG/postings/744000149602869",
+   "language": {
+    "code": "de",
+    "label": "German",
+    "labelNative": "Deutsch"
+   }
+  },
+  {
+   "id": "744000149597231",
+   "name": "SAP-Spezialist*in",
+   "uuid": "bbf3c03f-f10f-48ca-bddb-a0e18cc4cd1a",
+   "jobAdId": "b87685fd-ea5c-41c0-b678-afebec6a182b",
+   "defaultJobAd": true,
+   "refNumber": "REF921I",
+   "company": {
+    "identifier": "BarmeniaGothaerAG",
+    "name": "BarmeniaGothaer AG"
+   },
+   "releasedDate": "2026-09-15T13:10:30.577Z",
+   "location": {
+    "city": "Wuppertal",
+    "country": "de",
+    "address": "Barmenia-Allee",
+    "postalCode": "42119",
+    "remote": false,
+    "hybrid": true,
+    "hybridDescription": "",
+    "fullLocation": "Wuppertal, , Germany"
+   },
+   "industry": {
+    "id": "insurance",
+    "label": "Insurance"
+   },
+   "department": {
+    "id": "13864391",
+    "label": "Konzern"
+   },
+   "function": {
+    "id": "consulting",
+    "label": "Consulting"
+   },
+   "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+   },
+   "experienceLevel": {
+    "id": "associate",
+    "label": "Associate"
+   },
+   "customField": [
+    {
+     "fieldId": "6937e57e72b8a95188237128",
+     "fieldLabel": "Brands",
+     "valueId": "default",
+     "valueLabel": "BarmeniaGothaer AG"
+    },
+    {
+     "fieldId": "6937e57e72b8a95188237129",
+     "fieldLabel": "Department",
+     "valueId": "13864391",
+     "valueLabel": "Konzern"
+    },
+    {
+     "fieldId": "69493391a669e3aa57529089",
+     "fieldLabel": "Whatchado Jobstories",
+     "valueId": "94699528-3e16-48c0-a367-766989e71ccf",
+     "valueLabel": "gabriele-carl (Business Analystin)"
+    },
+    {
+     "fieldId": "COUNTRY",
+     "fieldLabel": "Country/Region",
+     "valueId": "de",
+     "valueLabel": "Germany"
+    },
+    {
+     "fieldId": "694933c6e481d964c7e3c4ed",
+     "fieldLabel": "Kontaktperson",
+     "valueId": "4badc616-04cb-4d67-93bf-6a5e7c3fa16c",
+     "valueLabel": "Paula Attrappe"
+    },
+    {
+     "fieldId": "6949342f31e8d125befb5e6d",
+     "fieldLabel": "Telefonnummer",
+     "valueId": "8839a4bf-b6e8-4e58-8f57-3a15f34b4bb5",
+     "valueLabel": "0202 0000000"
+    },
+    {
+     "fieldId": "69492bc9e481d964c7e3c4ec",
+     "fieldLabel": "Standort 2",
+     "valueId": "e0543aa7-2c19-4ea1-aac9-06a68fa58f33",
+     "valueLabel": "Arnoldiplatz 1, 50969 Köln"
+    },
+    {
+     "fieldId": "6949301026ac43e0f9d7d050",
+     "fieldLabel": "Branding",
+     "valueId": "c3d66645-140b-407b-87dc-d124a7477575",
+     "valueLabel": "IT"
+    },
+    {
+     "fieldId": "69492f6180c48b77ccfe1e32",
+     "fieldLabel": "Fachgebiet",
+     "valueId": "1060c187-e2b4-41f6-bff8-f7ead527f76d",
+     "valueLabel": "IT"
+    },
+    {
+     "fieldId": "694914a4a669e3aa57529088",
+     "fieldLabel": "Dein Einstieg",
+     "valueId": "8ecb7e7b-4e05-4167-8889-7c7e196ae8fa",
+     "valueLabel": "(Young/Senior) Professionals"
+    },
+    {
+     "fieldId": "6949340297db27c422322d30",
+     "fieldLabel": "Emailadresse",
+     "valueId": "e63cf2d4-407c-4ee9-97cb-b070ae2f43c2",
+     "valueLabel": "paula.attrappe@example.com"
+    },
+    {
+     "fieldId": "6949146d26ac43e0f9d7d04e",
+     "fieldLabel": "Startdatum ",
+     "valueLabel": "01.10.2026"
+    }
+   ],
+   "visibility": "PUBLIC",
+   "ref": "https://api.smartrecruiters.com/v1/companies/BarmeniaGothaerAG/postings/744000149597231",
+   "language": {
+    "code": "de",
+    "label": "German",
+    "labelNative": "Deutsch"
+   }
+  }
+ ]
+}

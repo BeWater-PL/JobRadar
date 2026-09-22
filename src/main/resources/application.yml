@@ -1,0 +1,232 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: jobradar
+  datasource:
+    # Die Datenbank liegt neben der Anwendung und ueberlebt jeden Neustart.
+    url: jdbc:sqlite:${user.home}/.jobradar/jobradar.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  thymeleaf:
+    cache: false
+
+logging:
+  # Ohne Konsolenfenster ist die Datei die einzige Spur - deshalb fest verdrahtet.
+  file:
+    name: ${user.home}/.jobradar/jobradar.log
+  logback:
+    rollingpolicy:
+      max-history: 7
+  level:
+    de.bewater.jobradar: INFO
+    org.hibernate.SQL: WARN
+
+jobradar:
+  # Laeuft morgens um 8 und nachmittags um 17 Uhr.
+  zeitplan: "0 0 8,17 * * *"
+  max-alter-tage: 2
+
+  arbeitsagentur:
+    basis-url: https://rest.arbeitsagentur.de/jobboerse/jobsuche-service
+    api-key: jobboerse-jobsuche
+    jobdetail-basis: https://www.arbeitsagentur.de/jobsuche/jobdetail/
+
+  # Karriere-Feeds einzelner Arbeitgeber (JSON). "aktiv: false" schaltet eine
+  # Quelle ab, ohne sie zu loeschen. Endpunkte und Header stammen aus
+  # JobRadar_Feed-Recherche.md - aendert ein Arbeitgeber sein Bewerbersystem,
+  # muss nur diese Datei angepasst werden.
+  #
+  # altersfilter: false = max-alter-tage gilt fuer diese Quelle nicht. Noetig,
+  # wo der Feed kein echtes Veroeffentlichungsdatum liefert (Anlagedatum) oder
+  # Anzeigen monatelang unveraendert fuehrt - sonst kaeme nie etwas durch.
+  # Wiederholungen verhindert der Fingerabdruck trotzdem.
+  quellen:
+    interamt:
+      aktiv: true
+      # Eingestellt-Datum stimmt, aber Behoerden schreiben selten neu aus - mit Filter kam nichts durch.
+      altersfilter: false
+      # Stellenportal des oeffentlichen Dienstes. Liefert nur je Partner-ID:
+      # 1714 = Stadt Wuppertal, 2732 = Gebaeudemanagement Stadt Wuppertal, 1409 = Jobcenter Wuppertal
+      url: https://interamt.de/koop/app/webservice_v2?partner={partner}
+      partner-ids: [1714, 2732, 1409]
+    wupperverband:
+      aktiv: true
+      # startDate ist der Beginn der Schaltung, oft Wochen alt.
+      altersfilter: false
+      url: https://karriere.wupperverband.de/jobPublication/list.json
+      firma: Wupperverband
+    gothaer:
+      aktiv: true
+      # releasedDate ist ein echtes Veroeffentlichungsdatum, taeglich Neues.
+      altersfilter: true
+      # SmartRecruiters, konzernweit ~400 Stellen; es werden nur die in Deutschland uebernommen.
+      url: https://api.smartrecruiters.com/v1/companies/BarmeniaGothaerAG/postings
+      limit: 100
+    riedel:
+      aktiv: true
+      # jobStartDate ist ein Anlagedatum.
+      altersfilter: false
+      url: https://www.riedel.net/jobs.json
+      firma: Riedel Communications
+    knipex:
+      aktiv: true
+      # Anzeigen bleiben monatelang im Feed.
+      altersfilter: false
+      url: https://karriere.knipex.de/jobs.feed.json
+      firma: Knipex
+    schmersal:
+      aktiv: true
+      # published_at liegt oft Monate zurueck.
+      altersfilter: false
+      url: https://schmersal.onlyfy.io/job/list/8b38kyrbny9hfkkhxzedhvrhnm979rq?format=json&max_results=100
+      firma: K.A. Schmersal GmbH & Co. KG
+    erfurt:
+      aktiv: true
+      # enabledDate ist Kampagnenstart, Anzeigen laufen lange.
+      altersfilter: false
+      # Talention: POST mit JSON-Body, GET antwortet 405.
+      url: https://jobs.erfurt.com/talention/api/3.2/job
+      firma: Erfurt & Sohn
+    bilstein:
+      aktiv: true
+      # erstelltAm ist ein Anlagedatum.
+      altersfilter: false
+      url: https://bilsteingroup.com/api/guidecom/api/v2/offersummaries
+      firma: bilstein group
+      # Ohne diesen Header liefert der Proxy eine HTML-Debugseite statt JSON.
+      header:
+        Accept: application/json
+    mail:
+      # Job-Alert-Mails von Indeed, StepStone, kimeta und meinestadt per IMAP.
+      # Zugangsdaten NICHT hier eintragen, sondern als Umgebungsvariablen:
+      #   JOBRADAR_MAIL_USER      = vollstaendige Mailadresse des Postfachs
+      #   JOBRADAR_MAIL_PASSWORT  = Passwort (IMAP muss beim Anbieter freigeschaltet sein)
+      #   JOBRADAR_MAIL_HOST      = IMAP-Server des Anbieters, z. B. imap.beispielprovider.de
+      # Fehlen sie, bleibt die Quelle still. Nur ungelesene Mails werden gelesen
+      # und danach als gelesen markiert; fremde Mails bleiben ungelesen liegen.
+      aktiv: true
+      host: ${JOBRADAR_MAIL_HOST:}
+      port: 993
+      ordner: INBOX
+      # Datum = Versanddatum der Mail; liegen Mails laenger ungelesen, sollen sie trotzdem zaehlen.
+      altersfilter: false
+
+  profile:
+    - name: Anwendungsentwickler Wuppertal
+      was: Anwendungsentwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Softwareentwickler Wuppertal
+      was: Softwareentwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Java Entwickler Wuppertal
+      was: Java Entwickler
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Fachinformatiker Anwendungsentwicklung Wuppertal
+      was: Fachinformatiker Anwendungsentwicklung
+      wo: Wuppertal
+      umkreis: 15
+      arbeitszeit: vz
+    - name: Softwareentwickler Remote deutschlandweit
+      was: Softwareentwickler
+      wo: ""
+      umkreis: 200
+      arbeitszeit: ho
+
+  # Ein einziges dieser Worte im Titel und die Anzeige ist raus.
+  ausschluss-worte:
+    - senior
+    - lead
+    - principal
+    - expert
+    - teamleiter
+    - teamleitung
+    - architekt
+    - ausbildung
+    - praktikum
+    - werkstudent
+    - duales studium
+    - dualer student
+    - abschlussarbeit
+    - bachelorarbeit
+    - masterarbeit
+
+  # Mindestens eines davon muss im Titel stehen - sonst ist es keine
+  # Entwicklerstelle (Arbeitgeber-Feeds bringen sonst Schlosser und Vertrieb mit).
+  # Wortstaemme reichen, verglichen wird als Teilstring: "entwickler" trifft auch
+  # "Softwareentwicklerin".
+  pflicht-worte:
+    - entwickler
+    - developer
+    - softwareentwickl
+    - anwendungsentwickl
+    - fachinformatik
+    - programmier
+    - software engineer
+    - software developer
+    - systems engineer
+    - informatik
+    - it-anwendung
+    - it-entwickl
+    - application
+    - frontend
+    - backend
+    - fullstack
+
+  # Nur diese Orte (Wuppertal und Umland). Anzeigen mit einem anderen Ort werden
+  # verworfen - ausser sie sind als Remote/Homeoffice gekennzeichnet. Fehlt der
+  # Ort ganz, bleibt die Anzeige drin. Verglichen wird als Teilstring, damit
+  # "Wuppertal-Elberfeld" oder "42119 Wuppertal" ebenfalls passen.
+  erlaubte-orte:
+    - Wuppertal
+    - Solingen
+    - Remscheid
+    - Velbert
+    - Ennepetal
+    - Schwelm
+    - Gevelsberg
+    - Sprockhövel
+    - Wülfrath
+    - Haan
+    - Hilden
+    - Mettmann
+    - Radevormwald
+    - Hagen
+
+  # Diese Worte sprechen fuer einen Einstieg.
+  einsteiger-worte:
+    - junior
+    - einsteiger
+    - berufseinsteiger
+    - absolvent
+    - trainee
+    - nachwuchs
+    - quereinsteiger
+
+  # Aus dem Lebenslauf.
+  technologien:
+    - java
+    - spring
+    - python
+    - sql
+    - javascript
+    - typescript
+    - html
+    - docker
+    - linux
+    - git
+    - backend
+    - fullstack
+    - full stack
+    - web

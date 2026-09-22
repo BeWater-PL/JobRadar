@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JobRadar</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --grund: #fbfaf8;
+            --karte: #ffffff;
+            --linie: #e3ded6;
+            --text: #23201c;
+            --leise: #6d675f;
+            --akzent: #7a4a1e;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --grund: #1b1917;
+                --karte: #262320;
+                --linie: #3a3530;
+                --text: #ece7e0;
+                --leise: #a49c92;
+                --akzent: #d79a5f;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 24px 16px 64px;
+            background: var(--grund);
+            color: var(--text);
+            font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        .huelle { max-width: 860px; margin: 0 auto; }
+        header { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; justify-content: space-between; margin-bottom: 4px; }
+        h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+        .lauf { color: var(--leise); font-size: 13px; }
+        form.inline { display: inline; }
+        button {
+            font: inherit; font-size: 13px; cursor: pointer;
+            border: 1px solid var(--linie); background: var(--karte); color: var(--text);
+            border-radius: 7px; padding: 5px 11px;
+        }
+        button:hover { border-color: var(--akzent); color: var(--akzent); }
+        button.haupt { background: var(--akzent); color: #fff; border-color: var(--akzent); }
+        button.haupt:hover { opacity: .88; color: #fff; }
+        h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .07em; color: var(--leise); margin: 32px 0 12px; font-weight: 600; }
+        .karte { background: var(--karte); border: 1px solid var(--linie); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+        .titel { font-weight: 600; font-size: 16px; margin-bottom: 2px; }
+        .titel a { color: inherit; text-decoration: none; }
+        .titel a:hover { color: var(--akzent); text-decoration: underline; }
+        .firma { color: var(--leise); font-size: 14px; }
+        .meta { color: var(--leise); font-size: 13px; margin-top: 6px; }
+        .punkte { float: right; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--akzent); font-weight: 600; }
+        .knoepfe { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+        .leer { color: var(--leise); font-style: italic; padding: 8px 0; }
+    </style>
+</head>
+<body>
+<div class="huelle">
+
+    <header>
+        <h1>JobRadar</h1>
+        <form class="inline" method="post" action="/suchen">
+            <button class="haupt" type="submit">Jetzt suchen</button>
+        </form>
+    </header>
+    <p class="lauf" th:text="'Letzter Lauf: ' + ${letzterLauf}">Letzter Lauf:</p>
+
+    <h2>Neu</h2>
+    <p class="leer" th:if="${neu.isEmpty()}">Nichts Neues.</p>
+    <div class="karte" th:each="a : ${neu}">
+        <span class="punkte" th:text="${a.punkte} + ' P'">0 P</span>
+        <div class="titel">
+            <a th:href="${a.link}" th:text="${a.titel}" target="_blank" rel="noopener">Titel</a>
+        </div>
+        <div class="firma" th:text="${a.firma}">Firma</div>
+        <div class="meta">
+            <span th:text="${a.ort}">Ort</span>
+            <span th:if="${a.entfernungKm != null}" th:text="' · ' + ${a.entfernungKm} + ' km'"></span>
+            <span th:if="${a.veroeffentlicht != null}" th:text="' · ' + ${#temporals.format(a.veroeffentlicht, 'dd.MM.yyyy')}"></span>
+            <span th:text="' · ' + ${a.begruendung}"></span>
+        </div>
+        <div class="knoepfe">
+            <form class="inline" method="post" action="/status">
+                <input type="hidden" name="id" th:value="${a.fingerabdruck}">
+                <input type="hidden" name="status" value="VORGEMERKT">
+                <button type="submit">Vormerken</button>
+            </form>
+            <form class="inline" method="post" action="/status">
+                <input type="hidden" name="id" th:value="${a.fingerabdruck}">
+                <input type="hidden" name="status" value="BEWORBEN">
+                <button type="submit">Beworben</button>
+            </form>
+            <form class="inline" method="post" action="/status">
+                <input type="hidden" name="id" th:value="${a.fingerabdruck}">
+                <input type="hidden" name="status" value="VERWORFEN">
+                <button type="submit">Passt nicht</button>
+            </form>
+        </div>
+    </div>
+
+    <h2>Vorgemerkt</h2>
+    <p class="leer" th:if="${vorgemerkt.isEmpty()}">Nichts vorgemerkt.</p>
+    <div class="karte" th:each="a : ${vorgemerkt}">
+        <div class="titel">
+            <a th:href="${a.link}" th:text="${a.titel}" target="_blank" rel="noopener">Titel</a>
+        </div>
+        <div class="firma" th:text="${a.firma}">Firma</div>
+        <div class="meta"><span th:text="${a.ort}">Ort</span></div>
+        <div class="knoepfe">
+            <form class="inline" method="post" action="/status">
+                <input type="hidden" name="id" th:value="${a.fingerabdruck}">
+                <input type="hidden" name="status" value="BEWORBEN">
+                <button type="submit">Beworben</button>
+            </form>
+            <form class="inline" method="post" action="/status">
+                <input type="hidden" name="id" th:value="${a.fingerabdruck}">
+                <input type="hidden" name="status" value="VERWORFEN">
+                <button type="submit">Passt nicht</button>
+            </form>
+        </div>
+    </div>
+
+    <h2>Beworben</h2>
+    <p class="leer" th:if="${beworben.isEmpty()}">Noch keine Bewerbung erfasst.</p>
+    <div class="karte" th:each="a : ${beworben}">
+        <div class="titel">
+            <a th:href="${a.link}" th:text="${a.titel}" target="_blank" rel="noopener">Titel</a>
+        </div>
+        <div class="firma" th:text="${a.firma}">Firma</div>
+        <div class="meta"><span th:text="${a.ort}">Ort</span></div>
+        <div class="knoepfe">
+            <form class="inline" method="post" action="/status">
+                <input type="hidden" name="id" th:value="${a.fingerabdruck}">
+                <input type="hidden" name="status" value="ABGELEHNT">
+                <button type="submit">Absage</button>
+            </form>
+        </div>
+    </div>
+
+    <h2>Abgelehnt</h2>
+    <p class="leer" th:if="${abgelehnt.isEmpty()}">Keine Absagen.</p>
+    <div class="karte" th:each="a : ${abgelehnt}">
+        <div class="titel">
+            <a th:href="${a.link}" th:text="${a.titel}" target="_blank" rel="noopener">Titel</a>
+        </div>
+        <div class="firma" th:text="${a.firma}">Firma</div>
+        <div class="meta"><span th:text="${a.ort}">Ort</span></div>
+    </div>
+
+</div>
+</body>
+</html>

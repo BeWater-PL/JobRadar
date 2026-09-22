@@ -1,0 +1,15 @@
+target/
+dist/
+*.db
+*.log
+.idea/
+*.iml
+.vscode/
+.DS_Store
+.claude/
+*.env
+application-local.yml
+.jobradar/
+*.eml.orig
+# interne Arbeitsprompts, gehoeren nicht ins Repo
+Prompt_*.md
