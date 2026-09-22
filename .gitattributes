@@ -1,0 +1,16 @@
+# Im Repo immer LF, im Arbeitsverzeichnis was das System will.
+* text=auto
+
+*.bat text eol=crlf
+*.java text
+*.yml text
+*.xml text
+*.md text
+*.html text
+*.json text
+*.eml text eol=crlf
+
+*.png binary
+*.jpg binary
+*.exe binary
+*.jar binary

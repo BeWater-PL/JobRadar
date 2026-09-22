@@ -1,10 +1,27 @@
-# JobRadar
+<h1 align="center">JobRadar</h1>
 
-> Die Beispieldaten unter `src/test/resources/` sind anonymisiert und
-> enthalten keine echten Ansprechpartner oder Kontaktdaten.
+<p align="center">
+  Sucht selbstständig nach Einstiegsstellen in der Anwendungsentwicklung im
+  Bergischen Land — und meldet jede Stelle nur ein einziges Mal.
+</p>
 
-Sucht selbstständig nach Einstiegsstellen in der Anwendungsentwicklung im
-Bergischen Land und meldet nur, was noch nicht gemeldet wurde.
+<p align="center">
+  <a href="https://github.com/BeWater-PL/JobRadar/actions/workflows/tests.yml"><img alt="Tests" src="https://github.com/BeWater-PL/JobRadar/actions/workflows/tests.yml/badge.svg"></a>
+  <img alt="Java 21" src="https://img.shields.io/badge/Java-21-b07219?logo=openjdk&logoColor=white">
+  <img alt="Spring Boot 3.3" src="https://img.shields.io/badge/Spring%20Boot-3.3-6db33f?logo=springboot&logoColor=white">
+  <img alt="SQLite" src="https://img.shields.io/badge/SQLite-eingebettet-003b57?logo=sqlite&logoColor=white">
+  <a href="LICENSE"><img alt="Lizenz MIT" src="https://img.shields.io/badge/Lizenz-MIT-7a4a1e"></a>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/oberflaeche-dunkel.png">
+    <img src="docs/oberflaeche-hell.png" alt="Trefferliste von JobRadar mit zwei neuen Stellen" width="880">
+  </picture>
+</p>
+
+<sub>Die Beispieldaten unter <code>src/test/resources/</code> sind anonymisiert und
+enthalten keine echten Ansprechpartner oder Kontaktdaten.</sub>
 
 Gebaut, weil die üblichen Jobportale beim automatischen Abruf sperren, die
 Bundesagentur für Arbeit aber eine offene Schnittstelle anbietet — und weil
