@@ -1,5 +1,8 @@
 # JobRadar
 
+> Die Beispieldaten unter `src/test/resources/` sind anonymisiert und
+> enthalten keine echten Ansprechpartner oder Kontaktdaten.
+
 Sucht selbstständig nach Einstiegsstellen in der Anwendungsentwicklung im
 Bergischen Land und meldet nur, was noch nicht gemeldet wurde.
 
