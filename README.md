@@ -92,8 +92,9 @@ Voraussetzung: JDK 21 oder neuer, `JAVA_HOME` gesetzt.
 build.bat
 ```
 
-Ergebnis: `dist\JobRadar\JobRadar.exe`. Rechtsklick → Senden an → Desktop legt
-die Verknüpfung dorthin, wo sie hingehört.
+Ergebnis: `dist\JobRadar\JobRadar.exe`. Die Verknüpfung mit Icon legt der Build
+selbst auf den Desktop — ein zweiter Klick darauf holt nur die schon
+laufende Anwendung nach vorn, statt sie ein zweites Mal zu starten.
 
 Zum Entwickeln ohne Verpacken:
 

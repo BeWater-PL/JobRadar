@@ -43,12 +43,12 @@ exit /b 1
 echo     Maven: %MVN%
 
 echo.
-echo [1/3] Baue das JAR ...
+echo [1/4] Baue das JAR ...
 call "%MVN%" -B clean package
 if errorlevel 1 goto fehler
 
 echo.
-echo [2/3] Raeume alten Build weg ...
+echo [2/4] Raeume alten Build weg ...
 if exist dist rmdir /s /q dist
 mkdir dist\lib
 REM Nur das fertige JAR einpacken, nicht den Rest aus target\
@@ -56,7 +56,7 @@ copy /y target\jobradar-%VERSION%.jar dist\lib\ >nul
 if errorlevel 1 goto fehler
 
 echo.
-echo [3/3] Verpacke zur Windows-Anwendung ...
+echo [3/4] Verpacke zur Windows-Anwendung ...
 REM app-image statt exe-Installer: braucht kein WiX und keine Adminrechte.
 REM Die Java-Laufzeit wird mit eingepackt - auf dem Zielrechner muss
 REM nichts installiert sein.
@@ -69,9 +69,30 @@ REM nichts installiert sein.
   --dest dist ^
   --vendor "BeWater" ^
   --description "Automatische Stellensuche" ^
+  --icon icon\jobradar.ico ^
   --java-options "-Xmx256m" ^
   --java-options "-Dfile.encoding=UTF-8" ^
   --java-options "--enable-native-access=ALL-UNNAMED"
+if errorlevel 1 goto fehler
+
+echo.
+echo [4/4] Lege die Desktop-Verknuepfung an ...
+REM Desktop-Pfad ueber .NET holen - er kann auf OneDrive umgeleitet sein.
+REM %~dp0 endet mit Backslash, deshalb steht hier kein weiterer davor.
+powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+  "$ziel = '%~dp0dist\%NAME%\%NAME%.exe';" ^
+  "$desktop = [Environment]::GetFolderPath('Desktop');" ^
+  "$lnk = Join-Path $desktop '%NAME%.lnk';" ^
+  "$w = New-Object -ComObject WScript.Shell;" ^
+  "$k = $w.CreateShortcut($lnk);" ^
+  "$k.TargetPath = $ziel;" ^
+  "$k.WorkingDirectory = '%~dp0dist\%NAME%';" ^
+  "$k.IconLocation = '%~dp0icon\jobradar.ico';" ^
+  "$k.Description = 'JobRadar - automatische Stellensuche';" ^
+  "$k.Save();" ^
+  "Write-Host ('    ' + $lnk);" ^
+  "$alt = Join-Path (Split-Path -Parent '%~dp0'.TrimEnd('\')) '%NAME%.lnk';" ^
+  "if (Test-Path $alt) { Remove-Item $alt -Force; Write-Host ('    alte Verknuepfung entfernt: ' + $alt) }"
 if errorlevel 1 goto fehler
 
 echo.
@@ -81,8 +102,7 @@ echo.
 echo  Die Anwendung liegt in:  dist\%NAME%\
 echo  Starten mit:             dist\%NAME%\%NAME%.exe
 echo.
-echo  Fuer eine Verknuepfung auf dem Desktop:
-echo  Rechtsklick auf %NAME%.exe  ^>  Senden an  ^>  Desktop
+echo  Die Verknuepfung mit Icon liegt auf dem Desktop.
 echo ================================================================
 echo.
 goto ende

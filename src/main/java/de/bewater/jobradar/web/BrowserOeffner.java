@@ -35,16 +35,42 @@ public class BrowserOeffner {
         if (!aktiv) {
             return;
         }
-        String adresse = "http://localhost:" + port;
+        oeffne("http://localhost:" + port);
+    }
+
+    /**
+     * Oeffnet den Standardbrowser. Statisch, damit die main-Methode das beim
+     * zweiten Doppelklick ohne Spring-Kontext benutzen kann.
+     *
+     * <p>Unter Windows fuehrt der Weg ueber rundll32: java.awt.Desktop faellt
+     * aus, sobald der Prozess headless laeuft - und genau das war die Ursache
+     * dafuer, dass beim Start nie ein Browser aufging.
+     *
+     * @return true, wenn ein Browser gestartet werden konnte
+     */
+    public static boolean oeffne(String adresse) {
+        if (System.getProperty("os.name", "").toLowerCase().contains("win")) {
+            try {
+                new ProcessBuilder("rundll32", "url.dll,FileProtocolHandler", adresse).start();
+                log.info("Browser geoeffnet: {}", adresse);
+                return true;
+            } catch (Exception e) {
+                log.warn("rundll32 hat den Browser nicht gestartet ({}) - versuche java.awt.Desktop", e.getMessage());
+            }
+        }
         try {
+            // Wirkt nur, solange AWT noch nicht hochgefahren ist - schadet sonst nicht.
+            System.setProperty("java.awt.headless", "false");
             if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
                 Desktop.getDesktop().browse(new URI(adresse));
-                return;
+                log.info("Browser geoeffnet: {}", adresse);
+                return true;
             }
-            log.info("Browser bitte selbst oeffnen: {}", adresse);
         } catch (Exception e) {
             // Kein Grund, die Anwendung deswegen zu beenden.
-            log.info("Browser liess sich nicht oeffnen ({}). Adresse: {}", e.getMessage(), adresse);
+            log.warn("Browser liess sich nicht oeffnen ({}).", e.getMessage());
         }
+        log.warn("Browser bitte selbst oeffnen: {}", adresse);
+        return false;
     }
 }

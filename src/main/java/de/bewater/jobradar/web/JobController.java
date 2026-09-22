@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -21,6 +22,18 @@ public class JobController {
     public JobController(StellenanzeigeRepository repo, SuchlaufService suchlauf) {
         this.repo = repo;
         this.suchlauf = suchlauf;
+    }
+
+    /**
+     * Kennung fuer den zweiten Doppelklick: Daran erkennt eine frisch gestartete
+     * .exe, dass auf dem Port wirklich JobRadar sitzt und kein fremdes Programm.
+     * Gleicher Pfad wie das POST weiter unten, aber anderes Verb - das POST
+     * setzt den Status einer Anzeige, dieses GET beantwortet nur "wer da?".
+     */
+    @GetMapping("/status")
+    @ResponseBody
+    public String kennung() {
+        return "jobradar";
     }
 
     @GetMapping("/")
